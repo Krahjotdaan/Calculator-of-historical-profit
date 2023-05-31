@@ -1,3 +1,7 @@
 from django.contrib import admin
+import App.models as models
 
-# Register your models here.
+admin.site.register(models.Currency)
+admin.site.register(models.Share)
+admin.site.register(models.PreciousMetal)
+admin.site.register(models.SharesBriefcase)
