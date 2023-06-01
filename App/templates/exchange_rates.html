@@ -1,4 +1,69 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Курсы валют, акций и драгметаллов</h1>
+    <h1>Курсы валют, акций и драгметаллов</h1>
+    <hr>
+    <h3 style="text-align: center;">Валюты</h3>
+    <div class="row row-cols-3 mt-3">
+        {% for cur_rate in currencies_rates %}
+            <div class="col p-2">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="row row-cols-2 mb-2">
+
+                            <div class="col-3" style="width: 55%;">
+                                <h6 class="card-text pt-3"><font color="blue">{{ cur_rate.currency.name }} ({{ cur_rate.currency.literal_code }})</font></h6>
+                            </div>
+
+                            <div class="col-3" style="width: 15%; text-align: center;">
+                                <h6 class="card-text pt-3">{{ cur_rate.rate }}</h6>
+                            </div>
+
+                            <div class="col-3" style="width: 15%; text-align: center;">
+                                <h6 class="card-text pt-3"><font color="darkgreen">+{{ cur_rate.profit }}</font></h6>
+                            </div>
+
+                            <div class="col-3" style="width: 15%; text-align: right;">
+                                <h6 class="card-text pt-3"><font color="gray">1.06</font></h6>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <h3 class="mt-5" style="text-align: center;">Нефть и драгметаллы</h3>
+    <div class="row row-cols-3 mt-3">
+        {% for met_rate in precious_metals_rates %}
+            <div class="col p-2">
+                <div class="card">
+                    <div class="card-body">
+
+                        <div class="row row-cols-2 mb-2">
+
+                            <div class="col-3" style="width: 55%;">
+                                <h6 class="card-text pt-3"><font color="blue">{{ met_rate.metal.name }}</font></h6>
+                            </div>
+
+                            <div class="col-3" style="width: 15%; text-align: center;">
+                                <h6 class="card-text pt-3">{{ met_rate.rate }}</h6>
+                            </div>
+
+                            <div class="col-3" style="width: 15%; text-align: center;">
+                                <h6 class="card-text pt-3"><font color="darkgreen">+{{ met_rate.profit }}</font></h6>
+                            </div>
+
+                            <div class="col-3" style="width: 15%; text-align: right;">
+                                <h6 class="card-text pt-3"><font color="gray">1.06</font></h6>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
 {% endblock %}

@@ -3,6 +3,8 @@ from App import models
 
 def exchange_rates(request):
     context = {}
+    context['currencies_rates'] = models.CurrencyRate.get()
+    context['precious_metals_rates'] = models.PreciousMetalRate.get()
     return render(request, "exchange_rates.html", context)
 
 
