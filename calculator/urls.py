@@ -19,8 +19,8 @@ from App import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('/', views.exchange_rates, name='exchange_rates'),
-    path('/converter', views.converter, name='converter'),
-    path('/calculator', views.calculator, name='calculator'),
-    path('/currency_reference', views.currency_reference, name='currency_reference'),
+    path('', views.exchange_rates, name='exchange_rates'),
+    path('converter', views.converter, name='converter'),
+    path('calculator', views.calculator, name='calculator'),
+    path('currency_reference', views.currency_reference, name='currency_reference'),
 ]
