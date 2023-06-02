@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from App import models
+from App import models, forms
 
 def exchange_rates(request):
     context = {}
@@ -10,6 +10,8 @@ def exchange_rates(request):
 
 def converter(request):
     context = {}
+    form = forms.ConverterForm()
+    context['form'] = form
     return render(request, "converter.html", context)
 
 

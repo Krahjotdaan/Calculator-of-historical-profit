@@ -1,4 +1,27 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Конвертер валют</h1>
+<hr>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="row row-cols-2 mt-3">
+        <div class="col pt-3" style="width: 50%;">
+            <div class="row mt-3">
+                {{ form.currency_a }}
+            </div>
+            <div class="row mt-3">
+                {{ form.amount_a }}
+            </div>
+        </div>
+
+        <div class="col pt-3" style="width: 50%;">
+            <div class="row mt-3">
+                {{ form.currency_b }}
+            </div>
+            <div class="row mt-3">
+                {{ form.amount_b }}
+            </div>
+        </div>
+    </div>
+</form>   
 {% endblock %}
